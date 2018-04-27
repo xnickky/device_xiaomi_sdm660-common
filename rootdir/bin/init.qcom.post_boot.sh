@@ -2699,44 +2699,57 @@ case "$target" in
             panel=${panel:2:4}
         fi
 
-        if [ $panel -gt 1080 ]; then
-            echo 2 > /proc/sys/kernel/sched_window_stats_policy
-            echo 5 > /proc/sys/kernel/sched_ravg_hist_size
-        else
-            echo 3 > /proc/sys/kernel/sched_window_stats_policy
-            echo 3 > /proc/sys/kernel/sched_ravg_hist_size
-        fi
         #Apply settings for sdm660, sdm636,sda636
         case "$soc_id" in
                 "317" | "324" | "325" | "326" | "345" | "346" )
-
-            echo 2 > /sys/devices/system/cpu/cpu4/core_ctl/min_cpus
-            echo 60 > /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres
-            echo 30 > /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres
-            echo 100 > /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms
-            echo 1 > /sys/devices/system/cpu/cpu4/core_ctl/is_big_cluster
-            echo 4 > /sys/devices/system/cpu/cpu4/core_ctl/task_thres
-
-            # Setting b.L scheduler parameters
-            echo 96 > /proc/sys/kernel/sched_upmigrate
-            echo 90 > /proc/sys/kernel/sched_downmigrate
-            echo 140 > /proc/sys/kernel/sched_group_upmigrate
-            echo 120 > /proc/sys/kernel/sched_group_downmigrate
 
             # cpuset settings
             echo 0-3 > /dev/cpuset/background/cpus
             echo 0-3 > /dev/cpuset/system-background/cpus
 
-            #if the kernel version >=4.14,use the schedutil governor
-            KernelVersionStr=`cat /proc/sys/kernel/osrelease`
-            KernelVersionS=${KernelVersionStr:2:2}
-            KernelVersionA=${KernelVersionStr:0:1}
-            KernelVersionB=${KernelVersionS%.*}
-            if [ $KernelVersionA -ge 4 ] && [ $KernelVersionB -ge 14 ]; then
-                sdm660_sched_schedutil_dcvs
-            else
-                sdm660_sched_interactive_dcvs
-            fi
+            # disable thermal bcl hotplug to switch governor
+            echo 0 > /sys/module/msm_thermal/core_control/enabled
+
+            # online CPU0
+            echo 1 > /sys/devices/system/cpu/cpu0/online
+            # configure governor settings for little cluster
+            echo "schedutil" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+            echo 20000 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us
+            echo 500 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us
+            echo 633600 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+            # online CPU4
+            echo 1 > /sys/devices/system/cpu/cpu4/online
+            # configure governor settings for big cluster
+            echo "schedutil" > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+            echo 20000 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/down_rate_limit_us
+            echo 500 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us
+            echo 1113600 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
+
+            # bring all cores online
+            echo 1 > /sys/devices/system/cpu/cpu0/online
+            echo 1 > /sys/devices/system/cpu/cpu1/online
+            echo 1 > /sys/devices/system/cpu/cpu2/online
+            echo 1 > /sys/devices/system/cpu/cpu3/online
+            echo 1 > /sys/devices/system/cpu/cpu4/online
+            echo 1 > /sys/devices/system/cpu/cpu5/online
+            echo 1 > /sys/devices/system/cpu/cpu6/online
+            echo 1 > /sys/devices/system/cpu/cpu7/online
+
+            # configure LPM
+            echo N > /sys/module/lpm_levels/system/pwr/cpu0/ret/idle_enabled
+            echo N > /sys/module/lpm_levels/system/pwr/cpu1/ret/idle_enabled
+            echo N > /sys/module/lpm_levels/system/pwr/cpu2/ret/idle_enabled
+            echo N > /sys/module/lpm_levels/system/pwr/cpu3/ret/idle_enabled
+            echo N > /sys/module/lpm_levels/system/perf/cpu4/ret/idle_enabled
+            echo N > /sys/module/lpm_levels/system/perf/cpu5/ret/idle_enabled
+            echo N > /sys/module/lpm_levels/system/perf/cpu6/ret/idle_enabled
+            echo N > /sys/module/lpm_levels/system/perf/cpu7/ret/idle_enabled
+            echo N > /sys/module/lpm_levels/system/pwr/pwr-l2-dynret/idle_enabled
+            echo N > /sys/module/lpm_levels/system/perf/perf-l2-dynret/idle_enabled
+            echo N > /sys/module/lpm_levels/system/pwr/pwr-l2-ret/idle_enabled
+            echo N > /sys/module/lpm_levels/system/perf/perf-l2-ret/idle_enabled
+            # enable LPM
+            echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
 
             #Enable input boost configuration
             echo "0:1401600" > /sys/module/cpu_boost/parameters/input_boost_freq
