@@ -19,6 +19,22 @@ allow hal_fingerprint_sdm660 fingerprintd_data_file:dir rw_dir_perms;
 allow hal_fingerprint_sdm660 fingerprintd_data_file:file create_file_perms;
 allow hal_fingerprint_sdm660 fingerprint_data_file:file rw_file_perms;
 allow hal_fingerprint_sdm660 fingerprint_sysfs:file rw_file_perms;
+allow hal_fingerprint_sdm660 fingerprint_sysfs:dir r_dir_perms;
+allow hal_fingerprint_sdm660 fingerprint_sysfs:lnk_file read;
+allow hal_fingerprint_sdm660 sysfs_devfreq:file r_file_perms;
+allow hal_fingerprint_sdm660 system_data_file:file r_file_perms;
+allow hal_fingerprint_sdm660 sysfs_devfreq:dir search;
+allow hal_fingerprint_sdm660 sysfs_sectouch:dir search;
+
+allow hal_fingerprint_sdm660 persist_file:dir r_dir_perms;
+allow hal_fingerprint_sdm660 persist_fingerprint_file:file r_file_perms;
+
+allow hal_fingerprint_sdm660 mnt_user_file:dir search;
+allow hal_fingerprint_sdm660 mnt_user_file:lnk_file r_file_perms;
+allow hal_fingerprint_sdm660 sdcardfs:dir search;
+allow hal_fingerprint_sdm660 storage_file:dir search;
+allow hal_fingerprint_sdm660 storage_file:lnk_file read;
+
 allow hal_fingerprint_sdm660 hal_perf_hwservice:hwservice_manager find;
 allow hal_fingerprint_sdm660 rootfs:dir read;
 allow hal_fingerprint_sdm660 vendor_mpctl_prop:file read;
@@ -34,3 +50,4 @@ r_dir_file(hal_fingerprint_sdm660, sysfs_devfreq)
 set_prop(hal_fingerprint_sdm660, hal_fingerprint_prop)
 
 dontaudit hal_fingerprint_default storage_file:dir search;
+allow hal_fingerprint_sdm660 media_rw_data_file:dir search;
