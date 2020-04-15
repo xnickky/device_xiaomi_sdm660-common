@@ -27,6 +27,18 @@
             app:min="1"
             app:units="%" />
     </PreferenceCategory>
+    
+     <PreferenceCategory
+        android:key="notification_led"
+        android:title="@string/notification_title">
+        <org.lineageos.settings.device.preferences.NotificationLedSeekBarPreference
+            android:key="notification_led_brightness"
+            android:title="@string/notification_led_title"
+            android:max="100"
+            app:min="1"
+            app:units="%"
+            android:defaultValue="100" />
+    </PreferenceCategory>
 
     <PreferenceCategory
        android:key="audio_amplify"
@@ -47,7 +59,7 @@
             app:min="-10"
             android:icon="@drawable/ic_mic"
             android:title="@string/mic_gain"/>
-   </PreferenceCategory>
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="display"
