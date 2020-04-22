@@ -29,3 +29,5 @@ type proc_dt2w, fs_type, proc_type;
 
 # XiamiParts
 type sysfs_fpsinfo, sysfs_type, fs_type;
+type sysfs_headphonegain, sysfs_type, fs_type;
+type sysfs_micgain, sysfs_type, fs_type;

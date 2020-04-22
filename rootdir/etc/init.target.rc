@@ -201,7 +201,13 @@ on boot
     chown system system /sys/class/graphics/fb0/msm_fb_cabc_movie
     chown system system /sys/class/graphics/fb0/msm_fb_cabc_still
     chown system system /sys/class/graphics/fb0/msm_fb_hbm
-
+    
+# Audio Amplification
+    chown system system /sys/kernel/sound_control/headphone_gain
+    chown system system /sys/kernel/sound_control/mic_gain
+    chmod 0660 /sys/kernel/sound_control/headphone_gain
+    chmod 0660 /sys/kernel/sound_control/mic_gain
+    
 # XiaomiParts
     chown system system /sys/devices/virtual/timed_output/vibrator/vtg_level
     chmod 0660 /sys/devices/virtual/timed_output/vibrator/vtg_level

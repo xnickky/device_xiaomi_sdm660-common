@@ -19,6 +19,11 @@
 
     <string name="display_title">Display</string>
 
+    <!-- Audio amplification -->
+    <string name="audio_amplify">Amplify Audio</string>
+    <string name="headphone_gain">Headphone Gain</string>
+    <string name="mic_gain">Microphone Gain</string>
+
     <!-- KCal -->
     <string name="device_kcal_title">Display Color Calibration</string>
 
