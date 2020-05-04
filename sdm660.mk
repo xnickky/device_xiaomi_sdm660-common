@@ -304,6 +304,7 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     init.target.rc \
     init.performance.sdm660.rc \
+    init.xiaomi_parts.rc \
     ueventd.qcom.rc
 
 # FM
