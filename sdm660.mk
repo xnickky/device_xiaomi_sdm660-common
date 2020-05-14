@@ -403,7 +403,8 @@ else
     $(COMMON_PATH)/power-libperfmgr/sdm660_powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 endif
 
-# RRO
+# RRO configuration
+TARGET_USES_RRO := true
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     $(COMMON_PATH)/overlay-lineage/lineage-sdk \
