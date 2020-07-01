@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2018 The Xiaomi-SDM660 Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="advanced_settings">Xiaomi Bileşenleri</string>
+    <string name="advanced_settings_summary">Fazladan özellikler</string>
+
+    <string name="display_title">Ekran</string>
+
+    <!-- Audio amplification -->
+    <string name="audio_amplify">Sesi Yükselt</string>
+    <string name="headphone_gain">Kulaklık artışı</string>
+    <string name="mic_gain">Mikrofon artışı</string>
+
+    <!-- Mi Note 3 Settings -->
+    <string name="jason_pref_title">Cihaz Ayarları</string>
+    <string name="jason_pref_summary">Mi Note 3 için fazladan ayarlar</string>
+
+    <!-- KCal -->
+    <string name="device_kcal_title">Ekran Renk Kalibrasyonu</string>
+
+    <!-- Notification LED brightness -->
+    <string name="notification_title">Bildirim Işığı</string>
+    <string name="notification_led_title">Bildirim ışığı parlaklığı</string>
+
+    <!-- Ambient Display -->
+    <string name="ambient_display_xiaomi">Xiaomi Ortam Ekranı</string>
+    <string name="advanced_doze_summary">Ortam Ekranı</string>
+
+    <string name="vibration_title">Titreşim</string>
+    <string name="vibration_strength_title">Kuvvet</string>
+
+    <!-- Thermal Profiles -->
+    <string name="thermal_profile_title">Termal</string>
+    <string name="thermal_title">Termal Ayarlar</string>
+    <string name="thermal_summary">Termal profilinizi seçin</string>
+    <string name="thermal_dialogTitle">Termal profilinizi seçin</string>
+
+    <!-- Values for Thermal Presets -->
+    <string name="thermal_performance">Performans</string>
+    <string name="thermal_battery">Batarya</string>
+    <string name="thermal_gaming">Oyun</string>
+    <string name="thermal_balance">Dengeli</string>
+    <string name="thermal_extreme_battery">Aşırı Batarya</string>
+
+    <!-- kcal -->
+    <string name="advanced_settings_kcal">Ekran Renk Kalibrasyonu</string>
+    <string name="cat_colormanagement">Renk Ayarları</string>
+    <string name="cat_calibration">Ekran Kalibrasyonu</string>
+
+    <string name="kcal_enabled">Açık</string>
+    <string name="kcal_disabled">Kapalı</string>
+    <string name="set_on_boot">Başlangıçta ayarla</string>
+    <string name="color_red">Kırmızı</string>
+    <string name="color_green">Yeşil</string>
+    <string name="color_blue">Mavi</string>
+    <string name="color_minimum">Minimum</string>
+    <string name="saturation">Doygunluk</string>
+    <string name="value">Ton</string>
+    <string name="contrast">Kontrast</string>
+    <string name="hue">Renk</string>
+    <string name="grayscale">Gri tonlamalı ekran</string>
+
+    <string name="presets_dialog_title">Ön Ayar Seçin</string>
+    <!-- Presets -->
+    <string name="preset_default">Varsayılan</string>
+    <string name="preset_version_1">Sürüm 1</string>
+    <string name="preset_version_2">Sürüm 2</string>
+    <string name="preset_version_3">Sürüm 3</string>
+    <string name="preset_triluminous">Triluminous</string>
+    <string name="preset_deep_black_white">Derin Siyah ve Beyaz</string>
+    <string name="preset_deep_natural">Derin Doğallık</string>
+    <string name="preset_cool_amoled">Soğuk Amoled</string>
+    <string name="preset_extreme_amoled">Aşırı Amoled</string>
+    <string name="preset_warm_amoled">Sıcak Amoled</string>
+    <string name="preset_hybrid_mamba">Hibrit Mamba</string>
+
+
+    <string name="hall_wakeup_title">Açılır Kapak ile Uyandırma</string>
+    <string name="hall_title">Açılır kapak ile uyandırmayı etkinleştir</string>
+    <string name="hall_wakeup_summary">Cihazı manyetik kapak ile uyandır</string>
+    <!-- menu -->
+    <string name="kcal_presets">@string/presets_dialog_title</string>
+    <string name="kcal_reset">Sıfırla</string>
+
+    <!-- CustomSeekBarPreference -->
+    <string name="edit_value">Yeni değeri seçin</string>
+    <string name="default_value">Geçerli değer</string>
+    <string name="edit_hint">%1$d ila %2$d arasındaki değer</string>
+    
+    <!-- FPS Info -->
+    <string name="fps_info_title">FPS Göstergesi</string>
+    <string name="fps_info_summary">Ekran üzerinde saniyede mevcut kare sayısını göster</string>
+</resources>
