@@ -31,6 +31,7 @@ binder_call(hal_fingerprint_sdm660, hal_perf_default)
 binder_use(hal_fingerprint_sdm660)
 
 r_dir_file(hal_fingerprint_sdm660, firmware_file)
+r_dir_file(hal_fingerprint_sdm660, sysfs_devfreq)
 
 add_service(hal_fingerprint_sdm660, goodixvnd_service)
 
