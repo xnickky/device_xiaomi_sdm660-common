@@ -30,10 +30,11 @@ on init
 
 on boot
     # Set on boot cpusets
-    write /dev/cpuset/top-app/cpus 0-3,4-7
-    write /dev/cpuset/foreground/cpus 0-3,4-7
-    write /dev/cpuset/background/cpus 0-7
-    write /dev/cpuset/system-background/cpus 0-7
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-3,6-7
+    write /dev/cpuset/background/cpus 0-1
+    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/restricted/cpus 0-3
 
 on post-fs
     # Set RLIMIT_MEMLOCK to 64MB
