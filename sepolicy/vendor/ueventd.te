@@ -4,3 +4,4 @@ allow ueventd kcal_dev:lnk_file r_file_perms;
 allow ueventd hall_dev:dir r_dir_perms;
 allow ueventd hall_dev:file rw_file_perms;
 allow ueventd hall_dev:lnk_file r_file_perms;
+allow ueventd ir_dev_file:chr_file { create setattr };
