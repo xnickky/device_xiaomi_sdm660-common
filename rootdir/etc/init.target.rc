@@ -150,6 +150,12 @@ on post-fs-data
 # Touchpanel
     chown system system /sys/touchpanel/double_tap
     chmod 0664 /sys/touchpanel/double_tap
+    chown system system /proc/touchscreen/enable_dt2w
+    chmod 0664 /proc/touchscreen/enable_dt2w
+    chown system system /proc/touchpanel/wake_gesture
+    chmod 0664 /proc/touchpanel/wake_gesture
+    chown system system /proc/tp_gesture
+    chmod 0664 /proc/tp_gesture
 
 #USB controller configuration
     setprop vendor.usb.rndis.func.name "rndis_bam"
