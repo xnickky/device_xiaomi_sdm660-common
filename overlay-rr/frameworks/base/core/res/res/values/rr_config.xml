@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2019 - 2020 The Evolution X Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<!-- These resources are around just to allow their values to be customized
+     for different hardware and product builds.  Do not translate. -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    
+    <!-- Whether notify fingerprint client of successful cancelled authentication -->
+    <bool name="config_notifyClientOnFingerprintCancelSuccess">false</bool>
+    
+    <!-- Whether to cleanup fingerprints upon connection to the daemon and when user switches -->
+    <bool name="config_cleanupUnusedFingerprints">false</bool>
+
+    <string-array translatable="false" name="config_customPermissionsList">
+        <item>com.google.android.apps.wellbeing</item>
+        <item>com.android.wallpaper.livepicker</item>
+    </string-array>
+
+    <!-- Whether to show emergency button in power menu -->
+    <bool name="config_showEmergencyButtonInPowerMenu">false</bool>
+
+    <!-- True if the notification's should dynamically tint the app icon and text -->
+    <bool name="config_allowNotificationIconTextTinting">true</bool>
+    <!-- True if the notification's dynamic app icon and text tint should be optimised for dark
+         backgrounds -->
+    <bool name="config_useDarkBgNotificationIconTextTinting">false</bool>
+
+    <!-- Defines the sysfs attribute path used by pocket bridge
+        to communicate pocket state to the pocket judge kernel driver. -->
+    <string name="config_pocketBridgeSysfsInpocket"></string>
+
+    <bool name="config_hasDashCharger">false</bool>
+    <!-- Whether device has warp charging support -->
+    <bool name="config_hasWarpCharger">false</bool>
+
+    <!-- Smart charging -->
+    <bool name="config_smartChargingAvailable">false</bool>
+    <integer name="config_smartChargingBatteryLevel">90</integer>
+    <integer name="config_smartChargingBatteryResumeLevel">15</integer>
+    <string name="config_smartChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/charging_enabled</string>
+    <string name="config_smartChargingSuspendValue" translatable="false">0</string>
+    <string name="config_smartChargingResumeValue" translatable="false">1</string>
+
+    <!-- Whether device ignores the RSSNR signal implementation -->
+    <bool name="config_ignoreRssnrSignalLevel">true</bool>
+
+    <!-- Whether the device supports Smart Pixels -->
+    <bool name="config_supportSmartPixels">false</bool>
+    
+    <!-- -1 means use same as config_screenBrightnessDoze -->
+    <integer name="config_screenBrightnessPulse">-1</integer>
+
+    <!-- SBC Dual Channel (SBC HD Audio) -->
+    <bool name="config_enableSBCDualChannelAudio">true</bool>
+
+    <!-- Default state for LiveDisplay -->
+    <bool name="config_liveDisplayAvailable">true</bool>
+    
+    <!-- Any package that has one of the package names defined below will be prevented
+         from using specific sensors in order to stop battery drain -->
+    <string-array name="config_blockPackagesSensorDrain">
+        <item>com.whatsapp</item>   
+        <item>com.gbwhatsapp</item>   
+        <item>com.yowhatsapp</item>   
+        <item>com.whatsapp.plus</item>   
+        <item>org.telegram.messenger</item>   
+        <item>org.telegram.messenger.plus</item>  
+        <item>com.netease.cloudmusic</item>   
+        <item>fm.xiami.main</item>   
+        <item>com.tencent.weread</item>   
+        <item>com.netease.snailread</item>   
+        <item>com.tencent.mm</item>   
+        <item>com.baidu.browser.apps</item>   
+        <item>com.tencent.tim</item>   
+        <item>org.thunderdog.challegram</item> 
+        <item>com.snapchat.android</item>   
+        <item>com.facebook.orca</item>   
+        <item>com.Slack</item>   
+        <item>tugapower.codeaurora.browser</item>   
+        <item>org.mozilla.firefox</item>   
+        <item>com.android.chrome</item>   
+        <item>com.amazon.mShop.android.shopping</item>   
+        <item>com.google.android.inputmethod.latin</item>   
+        <item>com.google.android.apps.plus</item>   
+        <item>com.google.android.apps.maps</item>   
+        <item>ru.ok.android</item>   
+        <item>com.instagram.android.MainTabActivity</item> 
+        <item>com.facebook.orca</item> 
+        <item>com.facebook.orca.StartScreenActivity</item> 
+        <item>com.spotify.music</item> 
+        <item>com.spotify.music.MainActivity</item>
+        <item>com.android.vending</item>   
+        <item>com.trtf.blue</item>   
+        <item>com.truecaller</item>
+        <item>com.gaana</item>
+        <item>com.facebook.katana.LoginActivity</item> 
+    </string-array>
+</resources>
