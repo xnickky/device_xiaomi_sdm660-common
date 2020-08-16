@@ -190,6 +190,16 @@ on boot
 
     chmod 0770 /sys/class/power_supply/battery/device/thermalcall
     chown system system /sys/class/power_supply/battery/device/thermalcall
+    
+    # SysInfo
+    chmod 0660 /sys/class/thermal/thermal_zone4/temp
+    chmod 0660 /sys/class/power_supply/battery/temp
+    chmod 0660 /sys/kernel/gpu/gpu_clock
+    chmod 0660 /sys/kernel/gpu/gpu_busy
+    chown system system /sys/class/thermal/thermal_zone4/temp
+    chown system system /sys/class/power_supply/battery/temp
+    chown system system /sys/kernel/gpu/gpu_clock
+    chown system system /sys/kernel/gpu/gpu_busy
 
     mkdir /vendor/mnt/persist/drm 0770 system system
     mkdir /vendor/mnt/persist/bluetooth 0770 bluetooth bluetooth
